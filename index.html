@@ -2104,10 +2104,11 @@ function closeManorSection() {
   var info = document.getElementById('manor-info');
   if (info) info.style.display = 'none';
 
+  document.querySelector('.app').style.display = 'none';
   document.getElementById('manor-home').style.display = 'flex';
+
   window.scrollTo(0, 0);
 }
-
 </script>
 </body>
 </html>
