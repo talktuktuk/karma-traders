@@ -2095,57 +2095,29 @@ function restartQuiz() {
 function openManorSection(section) {
   document.getElementById('manor-home').style.display = 'none';
 
-  document.getElementById('manor-about').style.display = 'none';
-  document.getElementById('manor-food').style.display = 'none';
-  document.getElementById('manor-pool').style.display = 'none';
-  document.getElementById('manor-drinks').style.display = 'none';
-  document.getElementById('manor-info').style.display = 'none';
+  var sections = [
+    'manor-about',
+    'manor-food',
+    'manor-pool',
+    'manor-drinks',
+    'manor-info'
+  ];
 
-  if (section === 'about') {
-    document.getElementById('manor-about').style.display = 'block';
-  }
+  sections.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) {
+      el.style.display = 'none';
+    }
+  });
 
-  if (section === 'food') {
-    document.getElementById('manor-food').style.display = 'block';
-  }
+  var selected = document.getElementById('manor-' + section);
 
-  if (section === 'pool') {
-    document.getElementById('manor-pool').style.display = 'block';
-  }
-
-  if (section === 'drinks') {
-    document.getElementById('manor-drinks').style.display = 'block';
-  }
-
-  if (section === 'info') {
-    document.getElementById('manor-info').style.display = 'block';
+  if (selected) {
+    selected.style.display = 'block';
   }
 }
+ 
 
-function enterTTT() {
-
-  document.getElementById('manor-home').style.display = 'none';
-  document.getElementById('lang-overlay').style.display = 'flex';
-
-  var app = document.querySelector('.app');
-  if (app) {
-    app.style.display = 'block';
-  }
-
-   showMain('phrases');
-}
-
-function closeManorSection() {
-  document.getElementById('manor-about').style.display = 'none';
-  document.getElementById('manor-food').style.display = 'none';
-  document.getElementById('manor-pool').style.display = 'none';
-  document.getElementById('manor-drinks').style.display = 'none';
-  document.getElementById('manor-info').style.display = 'none';
-  document.getElementById('manor-home').style.display = 'flex';
-  document.querySelector('.app').style.display = 'none';
-  document.getElementById('lang-overlay').style.display = 'none';
-  window.scrollTo(0, 0);
-}
 </script>
 </body>
 </html>
