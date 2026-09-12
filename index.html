@@ -2091,40 +2091,23 @@ function restartQuiz() {
   startQuiz();
 }
 
-function openManorSection(section) {
-  document.getElementById('manor-home').style.display = 'none';
-
-  var sections = [
-    'manor-about',
-    'manor-food',
-    'manor-pool',
-    'manor-drinks',
-    'manor-info'
-  ];
-
-  sections.forEach(function(id) {
-    var el = document.getElementById(id);
-    if (el) {
-      el.style.display = 'none';
-    }
-  });
-
-  var selected = document.getElementById('manor-' + section);
-
-  if (selected) {
-    selected.style.display = 'block';
-  }
-}
-
 function closeManorSection() {
   document.getElementById('manor-about').style.display = 'none';
   document.getElementById('manor-food').style.display = 'none';
-  document.getElementById('manor-pool').style.display = 'none';
-  document.getElementById('manor-drinks').style.display = 'none';
-  document.getElementById('manor-info').style.display = 'none';
+
+  var pool = document.getElementById('manor-pool');
+  if (pool) pool.style.display = 'none';
+
+  var drinks = document.getElementById('manor-drinks');
+  if (drinks) drinks.style.display = 'none';
+
+  var info = document.getElementById('manor-info');
+  if (info) info.style.display = 'none';
+
   document.getElementById('manor-home').style.display = 'flex';
   window.scrollTo(0, 0);
 }
+
 </script>
 </body>
 </html>
