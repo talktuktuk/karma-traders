@@ -2091,6 +2091,31 @@ function restartQuiz() {
   startQuiz();
 }
 
+function openManorSection(section) {
+  document.getElementById('manor-home').style.display = 'none';
+
+  var sections = [
+    'manor-about',
+    'manor-food',
+    'manor-pool',
+    'manor-drinks',
+    'manor-info'
+  ];
+
+  sections.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) {
+      el.style.display = 'none';
+    }
+  });
+
+  var selected = document.getElementById('manor-' + section);
+
+  if (selected) {
+    selected.style.display = 'block';
+  }
+}
+
 function closeManorSection() {
   document.getElementById('manor-about').style.display = 'none';
   document.getElementById('manor-food').style.display = 'none';
