@@ -2112,11 +2112,32 @@ function openManorSection(section) {
 
   var selected = document.getElementById('manor-' + section);
 
+ function closeManorSection() {
+  document.getElementById('manor-about').style.display = 'none';
+  document.getElementById('manor-food').style.display = 'none';
+  document.getElementById('manor-pool').style.display = 'none';
+  document.getElementById('manor-drinks').style.display = 'none';
+  document.getElementById('manor-info').style.display = 'none';
+  document.getElementById('manor-home').style.display = 'flex';
+  window.scrollTo(0, 0);
+}
+
+So the bottom should look like:
+
   if (selected) {
     selected.style.display = 'block';
   }
 }
- 
+
+function closeManorSection() {
+  document.getElementById('manor-about').style.display = 'none';
+  document.getElementById('manor-food').style.display = 'none';
+  document.getElementById('manor-pool').style.display = 'none';
+  document.getElementById('manor-drinks').style.display = 'none';
+  document.getElementById('manor-info').style.display = 'none';
+  document.getElementById('manor-home').style.display = 'flex';
+  window.scrollTo(0, 0);
+}
 
 </script>
 </body>
